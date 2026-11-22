@@ -1,0 +1,1088 @@
+/* ==========================================================================
+   Hitayu Clinic Care - Calming & Holistic Homeopathic Website Styles
+   Color Palette: Soft Sage & Healing Emerald, Clean White, Warm Sand, Dark Slate
+   ========================================================================== */
+
+:root {
+  --primary: #2d6a4f;         /* Deep Healing Emerald */
+  --primary-dark: #1b4332;    /* Forest Slate Green */
+  --primary-light: #e8f3ee;   /* Soft Mint Mist */
+  --sage: #74a892;            /* Calming Sage Accent */
+  --sage-soft: #f3f8f5;       /* Ultra-light Sage Tint */
+  --warm-cream: #faf8f5;      /* Warm Neutral Background */
+  --warm-border: #e5e2dc;     /* Soft Neutral Border */
+  --white: #ffffff;
+  --text-dark: #1e293b;       /* Dark Slate for Readability */
+  --text-muted: #475569;      /* Muted Slate */
+  --whatsapp: #1f9d55;
+  --whatsapp-dark: #177a42;
+  --danger: #dc2626;
+  --shadow-sm: 0 2px 8px rgba(27, 67, 50, 0.06);
+  --shadow-md: 0 10px 28px rgba(27, 67, 50, 0.08);
+  --shadow-lg: 0 20px 40px rgba(27, 67, 50, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --transition: all 0.28s ease;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, blockquote {
+  font-family: 'Lora', Georgia, serif;
+  color: var(--primary-dark);
+  line-height: 1.25;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-header {
+  max-width: 680px;
+  margin: 0 auto 3.25rem;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  margin-bottom: 0.85rem;
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.45rem;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-lg {
+  padding: 0.9rem 1.85rem;
+  font-size: 1rem;
+}
+
+.btn-block {
+  width: 100%;
+  padding: 0.95rem 1.5rem;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(45, 106, 79, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-light);
+}
+
+.btn-whatsapp {
+  background-color: var(--whatsapp);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(31, 157, 85, 0.24);
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--whatsapp-dark);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--warm-border);
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 1.22rem;
+  color: var(--primary-dark);
+  line-height: 1.15;
+}
+
+.brand-tagline {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--sage);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Mobile Nav Toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background-color: var(--primary-dark);
+  position: relative;
+  transition: var(--transition);
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 26px;
+  height: 2px;
+  background-color: var(--primary-dark);
+  transition: var(--transition);
+}
+
+.hamburger::before { top: -8px; }
+.hamburger::after { top: 8px; }
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+  background: linear-gradient(135deg, var(--sage-soft) 0%, var(--warm-cream) 100%);
+  padding: 4.5rem 0 5.5rem;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: var(--white);
+  color: var(--primary);
+  border: 1px solid #cde3d8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-title {
+  font-size: clamp(2.15rem, 4vw, 3.25rem);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--primary-dark);
+}
+
+.hero-title span {
+  color: var(--primary);
+}
+
+.hero-subtitle {
+  font-size: 1.08rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 580px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-trust {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--warm-border);
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.trust-item strong {
+  font-size: 0.98rem;
+  color: var(--primary-dark);
+}
+
+.trust-item span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.trust-divider {
+  width: 1px;
+  height: 32px;
+  background-color: var(--warm-border);
+}
+
+/* Hero Visual Card */
+.hero-card-wrapper {
+  position: relative;
+}
+
+.botanical-backdrop {
+  position: absolute;
+  inset: -16px;
+  background: linear-gradient(145deg, #cde3d8, #e9e4d8);
+  border-radius: var(--radius-lg);
+  transform: rotate(3deg);
+  z-index: 0;
+}
+
+.doctor-highlight-card {
+  position: relative;
+  z-index: 1;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--warm-border);
+  text-align: center;
+}
+
+.doctor-avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-light), #d5ebe0);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.qual-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  margin-bottom: 0.65rem;
+}
+
+.doctor-card-info h2 {
+  font-size: 1.55rem;
+  margin-bottom: 0.25rem;
+}
+
+.doctor-card-info > p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.card-highlights {
+  text-align: left;
+  background-color: var(--sage-soft);
+  padding: 1.15rem 1.25rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.card-highlights li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.card-highlights svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   About Doctor Section
+   ========================================================================== */
+.about-section {
+  background-color: var(--white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.about-card {
+  background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  padding: 2.75rem 2.25rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.about-quote-icon {
+  font-family: 'Lora', serif;
+  font-size: 4.5rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.25);
+  margin-bottom: -1rem;
+}
+
+.about-card blockquote {
+  color: var(--white);
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 1.75rem;
+}
+
+.about-signature strong {
+  display: block;
+  font-size: 1.05rem;
+  color: #d8f3dc;
+}
+
+.about-signature span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.philosophy-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.pill {
+  background-color: var(--warm-cream);
+  border: 1px solid var(--warm-border);
+  color: var(--primary-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border-radius: 50px;
+}
+
+.section-lead {
+  font-size: 1.08rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.body-text {
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.about-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about-feature-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-feature-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.about-feature-item p {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Specialized Treatments Section
+   ========================================================================== */
+.treatments-section {
+  background-color: var(--warm-cream);
+}
+
+.treatments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+.treatment-card {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  border: 1px solid var(--warm-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.treatment-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: #b7d7c8;
+}
+
+.card-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.treatment-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.card-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.condition-list {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.condition-list li {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.condition-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.card-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.card-link:hover {
+  color: var(--primary-dark);
+  gap: 0.6rem;
+}
+
+/* ==========================================================================
+   Why Choose Hitayu Clinic Care (4 Pillars)
+   ========================================================================== */
+.why-section {
+  background-color: var(--white);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.pillar-card {
+  background-color: var(--sage-soft);
+  border: 1px solid #dcebe3;
+  border-radius: var(--radius-md);
+  padding: 2rem 1.65rem;
+  transition: var(--transition);
+}
+
+.pillar-card:hover {
+  background-color: var(--primary-light);
+}
+
+.pillar-number {
+  font-family: 'Lora', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--sage);
+  margin-bottom: 0.75rem;
+}
+
+.pillar-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.pillar-card p {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Patient Testimonials
+   ========================================================================== */
+.testimonials-section {
+  background-color: var(--warm-cream);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+}
+
+.testimonial-card {
+  background-color: var(--white);
+  border: 1px solid var(--warm-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stars {
+  color: #eab308;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.9rem;
+}
+
+.testimonial-text {
+  font-size: 0.96rem;
+  color: var(--text-dark);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.patient-info {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.patient-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--white);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.patient-info strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--primary-dark);
+}
+
+.patient-info span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Appointment Booking Section
+   ========================================================================== */
+.appointment-section {
+  background: linear-gradient(180deg, var(--white) 0%, var(--sage-soft) 100%);
+}
+
+.appointment-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.clinic-details-box {
+  background-color: var(--white);
+  border: 1px solid var(--warm-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.detail-row {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.detail-row svg {
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.detail-row strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.15rem;
+}
+
+.detail-row span {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.whatsapp-box {
+  background-color: var(--primary-light);
+  border: 1px solid #c6e2d4;
+  border-radius: var(--radius-md);
+  padding: 1.35rem 1.5rem;
+}
+
+.whatsapp-box p {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 0.85rem;
+}
+
+/* Form Card */
+.appointment-form-card {
+  background-color: var(--white);
+  border: 1px solid var(--warm-border);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-md);
+}
+
+.appointment-form-card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.15rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+}
+
+.req {
+  color: var(--danger);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background-color: var(--sage-soft);
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  padding: 0.72rem 0.9rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: var(--white);
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.14);
+}
+
+.error-msg {
+  display: block;
+  color: var(--danger);
+  font-size: 0.78rem;
+  margin-top: 0.3rem;
+  min-height: 1em;
+}
+
+/* Booking Confirmation */
+.booking-confirmation {
+  text-align: center;
+  padding: 1.5rem 0.5rem;
+}
+
+.confirm-icon {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-confirmation h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.booking-confirmation p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  line-height: 1.7;
+}
+
+.confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  background-color: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.85);
+  padding-top: 4rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.footer-logo .brand-icon {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #a7f3d0;
+}
+
+.footer-logo .brand-name {
+  color: var(--white);
+}
+
+.footer-logo .brand-tagline {
+  color: #a7f3d0;
+}
+
+.footer-about {
+  margin-top: 1rem;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 340px;
+}
+
+.footer h4 {
+  color: var(--white);
+  font-size: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.footer-links ul,
+.footer-contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: #a7f3d0;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.4rem 0;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ==========================================================================
+   Responsive Design (Mobile-First Adaptations)
+   ========================================================================== */
+@media (max-width: 960px) {
+  .hero-grid,
+  .about-grid,
+  .appointment-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--warm-border);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-130%);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .nav-cta {
+    width: 100%;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
